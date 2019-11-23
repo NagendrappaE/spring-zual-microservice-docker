@@ -1,0 +1,54 @@
+refer the below link for the  spring boot microservice
+
+https://medium.com/omarelgabrys-blog/microservices-with-spring-boot-intro-to-microservices-part-1-c0d24cd422c3
+the acces url
+
+http://localhost:8300/orgapi/saveorg?orgname=NACH0001
+
+http://localhost:8100/org
+
+http://localhost:8200/cbs
+
+
+d##############################docker###########
+1.docker build -f Dockerfile -t cbs-microservice .
+
+2.docker build -f Dockerfile -t eurekaserver .
+
+3.docker build -f Dockerfile -t originator-microservice .
+
+4.docker build -f Dockerfile -t zual-gateway .
+
+###################docker run####################
+
+1.docker run -p 8080:8080 -d spring-docker-demo1 (-d to run the docker in  background)
+
+
+#start eureka server
+2.docker run -p 8711:8711 -d eurekaserver
+
+#start  cbs-microservice
+
+3.docker run -p 8200:8200 -d cbs-microservice
+
+#start  originator-microservice
+
+docker run -p 8100:8100 -d originator-microservice
+
+#start  zual-gateway
+
+4.docker run -p 8300:8300 -d zual-gateway
+
+
+
+#######################docker STOP######################
+
+1.docker container ls
+
+2.docker stop 8184d679f778 f28cd93f2b95(container id)
+
+3.docker images
+
+4.docker container rm 01b945aa48a0
+
+5.docker rmi zual-gateway
