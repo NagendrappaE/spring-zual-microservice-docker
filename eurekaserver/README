@@ -52,3 +52,17 @@ docker run -p 8100:8100 -d originator-microservice
 4.docker container rm 01b945aa48a0
 
 5.docker rmi zual-gateway
+
+
+################dokcer compose############
+
+1.start the compose
+docker-compose up
+
+2.to check the config 
+ 
+ docker-compose config
+ 
+3.to stop docker compose
+
+docker-compose down 

@@ -1,0 +1,15 @@
+version: '3'
+services:
+  eurekaserver:
+    image: eurekaserver
+    ports:
+      - 8711:8711
+  cbs-microservice:
+    image: cbs-microservice
+    environment:
+      - JAVA_OPTS=
+         -DEUREKA_SERVER=http://eurekaserver:8711/eureka
+    depends_on:
+      - eurekaserver
+    ports:
+      - 8200:8200
